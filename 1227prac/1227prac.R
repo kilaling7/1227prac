@@ -65,5 +65,27 @@ vif(M1)
 vif(M2a)
 vif(M2b)
 
+M1p=predict(M1, newdata=Test)
+r1=M1p-Test$PSA
+MSE1=mean(r1^2)
+RMSE1 = sqrt(MSE1)
+MAE1 = mean(abs(r1))
+MAPE1=mean(abs(r1/Test$PSA))
 
+M2ap=predict(M2a, newdata=Test)
+r2a=exp(M2ap)-Test$PSA
+MSE2a=mean(r2a^2)
+RMSE2a = sqrt(MSE2a)
+MAE2a = mean(abs(r2a))
+MAPE2a=mean(abs(r2a/Test$PSA))
+
+M2bp=predict(M2b, newdata=Test)
+r2b=exp(M2bp)-Test$PSA
+MSE2b=mean(r2b^2)
+RMSE2b = sqrt(MSE2b)
+MAE2b = mean(abs(r2b))
+MAPE2b=mean(abs(r2b/Test$PSA))
+
+summary(M2a)
+confint(M2a)
 
