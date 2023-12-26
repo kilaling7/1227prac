@@ -37,3 +37,19 @@ boxcox(M1)
 
 M2=lm(log(PSA)~.,data=Train)
 summary(M2)
+
+
+e2s=rstandard(M2)
+residualPlot(M2,type="rstandard",quadratic=F)
+
+resettest(M2,power=2,type='regressor')
+ncvTest(M2)#This test is often called the Breusch-Pagan test; 
+
+qqPlot(M2)
+lillie.test(e2s)#KS test for normality
+shapiro.test(e2s)#Shapiro-Wilk Normality Test
+
+plot(e2s,type = "l",col='2')
+acf(e2s,ci=0.99)
+#dwtest(M2)#Durbin-Watson test
+runs.test(es)
