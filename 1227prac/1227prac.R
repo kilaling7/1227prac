@@ -53,3 +53,10 @@ plot(e2s,type = "l",col='2')
 acf(e2s,ci=0.99)
 #dwtest(M2)#Durbin-Watson test
 runs.test(es)
+
+s1=step(M2)#寫AIC=
+summary(s1)
+M2a=lm(log(PSA)~Age+Bph+Svi+Cap+Gscore,data=Train)
+summary(M2a)
+M2b=lm(log(PSA)~+Bph+Svi+Cap+Gscore,data=Train)
+summary(M2b)
