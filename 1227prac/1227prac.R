@@ -89,3 +89,11 @@ MAPE2b=mean(abs(r2b/Test$PSA))
 summary(M2a)
 confint(M2a)
 
+##
+influencePlot(M2a)
+n=dim(Train)[1]
+p=length(M2a$coef)
+a=cooks.distance(M2a)
+plot(a)
+abline(h=4/(n-p), lty=2)
+identify(1:n, a, row.names(Train))
