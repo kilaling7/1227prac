@@ -22,3 +22,13 @@ resettest(M1,power=2,type='regressor')
 #Homogeneity 假設未通過
 ncvTest(M1)#This test is often called the Breusch-Pagan test; 
 
+#Normality 未通過 拒絕H0 不常態
+qqPlot(M1)
+lillie.test(es)#KS test for normality
+shapiro.test(es)#Shapiro-Wilk Normality Test
+plot(es,type = "l",col='2')
+acf(es, ci=0.99)
+#dwtest(M1)#Durbin-Watson test 檢定獨立性 因P-VALUE=0.8041>0.05 不拒絕
+runs.test(es)
+
+
