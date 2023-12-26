@@ -34,3 +34,6 @@ runs.test(es)
 #Phase V:
 library(MASS)
 boxcox(M1)
+
+M2=lm(log(PSA)~.,data=Train)
+summary(M2)
