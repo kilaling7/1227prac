@@ -9,3 +9,9 @@ Train=PSA_A[Sindex,]
 Test=PSA_A[-Sindex,]
 M1 <- lm(PSA~.,data=Train)
 summary(M1)
+
+library(car)
+library(lmtest)
+library(nortest)
+library(randtests)
+
