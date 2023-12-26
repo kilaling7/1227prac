@@ -31,4 +31,6 @@ acf(es, ci=0.99)
 #dwtest(M1)#Durbin-Watson test 檢定獨立性 因P-VALUE=0.8041>0.05 不拒絕
 runs.test(es)
 
-
+#Phase V:
+library(MASS)
+boxcox(M1)
