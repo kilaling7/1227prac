@@ -15,3 +15,10 @@ library(lmtest)
 library(nortest)
 library(randtests)
 
+###Function Form 結果是假設未通過
+es=rstandard(M1)
+residualPlot(M1,type="rstandard",quadratic=F)
+resettest(M1,power=2,type='regressor')
+#Homogeneity 假設未通過
+ncvTest(M1)#This test is often called the Breusch-Pagan test; 
+
