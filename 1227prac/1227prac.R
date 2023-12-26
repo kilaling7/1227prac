@@ -60,3 +60,10 @@ M2a=lm(log(PSA)~Age+Bph+Svi+Cap+Gscore,data=Train)
 summary(M2a)
 M2b=lm(log(PSA)~+Bph+Svi+Cap+Gscore,data=Train)
 summary(M2b)
+
+vif(M1)
+vif(M2a)
+vif(M2b)
+
+
+
